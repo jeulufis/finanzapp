@@ -1,84 +1,100 @@
-import React from "react";
 import { View, Text, ScrollView } from "react-native";
+import React from "react";
 import { Colors } from "@/constants/Colors";
 import { Texts } from "@/constants/Texts";
 import { HelloWave } from "@/components/HelloWave";
 
-export default function CuentaDeAhorro() {
-  const cuentaDeAhorroData = [
-    
+export default function Depositos() {
+  const data = [
     {
-      title: "Para qué sirve una Cuenta de Ahorro?",
+      title: "Plazo Fijo",
       description:
-        "Las cuentas de ahorro sirven para varias finalidades. En primer lugar, proporcionan un lugar seguro para guardar dinero y acumular fondos para futuros gastos o emergencias. También pueden ayudar a alcanzar objetivos financieros a corto plazo, como la compra de un artículo costoso o unas vacaciones. Además, pueden ser utilizadas como una herramienta de gestión financiera para separar fondos para diferentes propósitos, como el ahorro para la educación, el pago de deudas o la inversión.",
+        "El dinero se deposita por un tiempo específico, que puede variar desde unos pocos meses hasta varios años. Durante este período, el dinero no puede retirarse sin incurrir en penalizaciones.",
     },
     {
-      title: "Son realmente útiles las Cuentas de Ahorro?",
+      title: "Interés Fijo",
       description:
-        "Sí, las cuentas de ahorro son realmente útiles por varias razones. En primer lugar, ofrecen seguridad al mantener los fondos en una institución financiera regulada y protegida por esquemas de seguro de depósitos. Además, proporcionan liquidez, lo que significa que el dinero puede retirarse fácilmente cuando sea necesario sin incurrir en penalizaciones significativas. También pueden generar intereses sobre los fondos depositados, lo que ayuda a hacer crecer el dinero con el tiempo, aunque las tasas de interés suelen ser más bajas que en otros productos de inversión. Por último, las cuentas de ahorro pueden ayudar a fomentar hábitos financieros saludables al promover el ahorro regular y la planificación financiera a largo plazo.",
+        "El interés que se pagará al final del período es fijado en el momento de la apertura del depósito. Esto proporciona certeza sobre el rendimiento del ahorro.",
     },
     {
-      title: "Cuáles son las ventajas de tener una Cuenta de Ahorro?",
+      title: "Riesgo Bajo",
       description:
-        "Algunas de las principales ventajas de tener una cuenta de ahorro incluyen la accesibilidad, la seguridad, la liquidez, la rentabilidad y la posibilidad de establecer metas financieras. Las cuentas de ahorro ofrecen acceso fácil y rápido a los fondos depositados, proporcionan un entorno seguro para guardar dinero, permiten retirar fondos en cualquier momento sin incurrir en penalizaciones significativas, ofrecen la oportunidad de ganar intereses sobre los fondos depositados y pueden utilizarse para establecer y alcanzar metas financieras específicas.",
+        "Son considerados una inversión de bajo riesgo porque el capital invertido está garantizado y el rendimiento es predecible.",
     },
     {
-      title: "Qué aspectos considerar al abrir una Cuenta de Ahorro?",
+      title: "Liquidez Reducida",
       description:
-        "Al abrir una cuenta de ahorro, es importante considerar varios aspectos, como las tasas de interés ofrecidas, las tarifas asociadas, los requisitos de saldo mínimo, la accesibilidad a los fondos, la seguridad de la institución financiera, las opciones de gestión de la cuenta y la facilidad de uso de los servicios en línea o móviles. También es útil comparar las ofertas de diferentes instituciones financieras para encontrar la cuenta de ahorro que mejor se adapte a tus necesidades y objetivos financieros.",
+        "El dinero no está disponible hasta el final del plazo, a menos que se acepten penalizaciones por retiro anticipado, que pueden incluir la pérdida de parte o la totalidad de los intereses acumulados.",
     },
     {
-      title: "Cómo puedo maximizar los beneficios de mi Cuenta de Ahorro?",
+      title: "Rentabilidad",
       description:
-        "Para maximizar los beneficios de una cuenta de ahorro, es importante establecer metas financieras claras, automatizar los depósitos periódicos, mantener un saldo mínimo para evitar tarifas adicionales, comparar y negociar las tasas de interés con la institución financiera, revisar regularmente el rendimiento de la cuenta y considerar otras opciones de inversión a medida que crece el saldo de la cuenta.",
+        "Los depósitos a plazo suelen ofrecer una tasa de interés más alta que las cuentas de ahorro tradicionales debido a la falta de liquidez y el compromiso de tiempo.",
+    },
+    {
+      title: "Seguridad",
+      description:
+        "En muchos países, los depósitos a plazo están protegidos por esquemas de seguro de depósitos que garantizan el reembolso del capital hasta un cierto límite en caso de quiebra del banco.",
     },
   ];
 
   return (
     <ScrollView>
-      
       <View
         style={{
           paddingTop: 50,
           paddingHorizontal: 20,
-          backgroundColor: Colors.BLACK,
+          backgroundColor: "#000",
           height: "100%",
           display: "flex",
           gap: 17,
         }}
       >
-        <View>
         <Text
           style={{
             color: Colors.WHITE_SUBTITLE,
             fontSize: Texts.title,
             fontWeight: "bold",
+            letterSpacing: -0.3,
           }}
         >
-          Cuenta de Ahorro <HelloWave />
+          Depositos a plazo <HelloWave />
+        </Text>
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Los depósitos a plazo, son productos financieros ofrecidos por bancos y otras instituciones financieras.
         </Text>
 
         <Text
           style={{
             color: Colors.TEXTO,
             fontSize: Texts.text,
-            paddingVertical: 20,
+            textAlign: "justify",
           }}
         >
-          Una cuenta de ahorro es un producto financiero ofrecido por bancos y
-          otras instituciones financieras que permite a los individuos depositar
-          fondos y ganar intereses sobre esos fondos. Generalmente, estas
-          cuentas están diseñadas para el ahorro a corto o mediano plazo y
-          ofrecen liquidez, seguridad y cierta rentabilidad.
+          Se caracterizan por ser una forma de ahorro en la que el cliente deposita una suma de dinero en la entidad financiera durante un período de tiempo determinado, a cambio de recibir un interés fijo al final del plazo acordado.
         </Text>
-      </View>
-        
-        {cuentaDeAhorroData.map((item, index) => (
+
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Aquí te dejare algunos aspectos clave de los depósitos a plazo:
+        </Text>
+
+        {data.map((item, index) => (
           <View
             key={index}
             style={{
               paddingHorizontal: 20,
-              marginHorizontal: 60,
               paddingBottom: 20,
               borderWidth: 1,
               borderColor: "#333",
@@ -89,16 +105,18 @@ export default function CuentaDeAhorro() {
           >
             <Text
               style={{
-                color: Colors.WHITE_SUBTITLE,
-                fontSize: Texts.title,
-                fontWeight: "bold",
+                color: Colors.WHITE_ORIGIN,
+                fontSize: Texts.subtitle,
+                textTransform: "capitalize",
+                paddingBottom: 1,
+                fontWeight: "600",
               }}
             >
-              {item.title} 
+              {item.title}
             </Text>
             <Text
               style={{
-                color: Colors.WHITE,
+                color: Colors.TEXTO,
                 fontSize: Texts.text,
                 textAlign: "justify",
               }}
@@ -107,6 +125,10 @@ export default function CuentaDeAhorro() {
             </Text>
           </View>
         ))}
+
+        <Text style={{ color: Colors.TEXTO, fontSize: Texts.text }}>
+          En resumen, los depósitos a plazo son una opción de ahorro para aquellos que desean obtener un rendimiento fijo y están dispuestos a comprometer su dinero por un período específico sin necesidad de acceder a él durante ese tiempo.
+        </Text>
       </View>
     </ScrollView>
   );

@@ -6,12 +6,14 @@ import { FlatList } from "react-native";
 import { Texts } from "@/constants/Texts";
 import { Link } from "expo-router";
 
-import EvilIcons from '@expo/vector-icons/EvilIcons';
+import EvilIcons from "@expo/vector-icons/EvilIcons";
+import AntDesign from "@expo/vector-icons/AntDesign";
+
 export default function ContainerPost() {
   const data = [
     {
       link: "/depositos",
-      key: "Depositos a Plazo",
+      key: "Depósitos a Plazo",
       description:
         "Instrumentos financieros en los que se deposita una cantidad de dinero a una tasa de interés fija por un período determinado.",
     },
@@ -35,9 +37,14 @@ export default function ContainerPost() {
     },
     {
       link: "/activos",
-      key: "Activos & Pasivos",
+      key: "Activos",
       description:
         "Activos son recursos con valor económico que posee una entidad, mientras que pasivos son obligaciones financieras que debe pagar.",
+    },{
+      link: "/pasivos",
+      key: "Pasivos ",
+      description:
+        "Son recursos con valor económico que posee una entidad, mientras que pasivos son obligaciones financieras que debe pagar.",
     },
     {
       link: "/creditos",
@@ -47,7 +54,7 @@ export default function ContainerPost() {
     },
     {
       link: "/cuentas",
-      key: "Cuentas de Ahorro",
+      key: "Cuenta de Ahorro",
       description:
         "Cuentas bancarias que generan intereses sobre el saldo depositado, generalmente utilizadas para ahorrar dinero a corto plazo.",
     },
@@ -65,63 +72,103 @@ export default function ContainerPost() {
     },
     {
       link: "/riesgos",
-      key: "Riesgos Crediticios",
+      key: "Riesgo Crediticio",
+      description:
+        "Posibilidad de que un prestatario no cumpla con sus obligaciones de pago, afectando al prestamista.",
+    },{
+      link: "/fondos",
+      key: "Fondos de Pension",
+      description:
+        "Posibilidad de que un prestatario no cumpla con sus obligaciones de pago, afectando al prestamista.",
+    },{
+      link: "/criptomonedas",
+      key: "Criptomonedas",
+      description:
+        "Posibilidad de que un prestatario no cumpla con sus obligaciones de pago, afectando al prestamista.",
+    },{
+      link: "/exchanges",
+      key: "Exchanges",
+      description:
+        "Posibilidad de que un prestatario no cumpla con sus obligaciones de pago, afectando al prestamista.",
+    },{
+      link: "/bolsa",
+      key: "Bolsa de Valores",
+      description:
+        "Posibilidad de que un prestatario no cumpla con sus obligaciones de pago, afectando al prestamista.",
+    },{
+      link: "/crowdfunding",
+      key: "Crowdfunding",
+      description:
+        "Posibilidad de que un prestatario no cumpla con sus obligaciones de pago, afectando al prestamista.",
+    },{
+      link: "/pagar",
+      key: "Pagar Deuda",
       description:
         "Posibilidad de que un prestatario no cumpla con sus obligaciones de pago, afectando al prestamista.",
     },
   ];
 
   return (
-    <View style={{ paddingTop: 30 }}>
+    <View style={{ paddingTop: 20 }}>
       <FlatList
         data={data}
         renderItem={({ item }) => (
           <Link href={item.link} asChild>
-          <Pressable
-            style={{
-              borderWidth: 1,
-              borderColor: "#333",
-              borderRadius: 10,
-              marginVertical: 10,
-              paddingHorizontal: 18,
-              paddingVertical: 15,
-            }}
-          >
-            <View
+            <Pressable
               style={{
-                display: "flex",
-                flexDirection: "row",
-                justifyContent:'space-between',
-                alignItems: "center",
+                borderWidth: 1,
+                borderColor: "#333",
+                borderRadius: 10,
+                marginVertical: 6,
+                paddingHorizontal: 20,
+                paddingVertical: 20,
               }}
             >
-              <View style={{ width: 340 }}>
-                <Text
-                  style={{
-                    fontWeight: "600",
-                    letterSpacing: -0.1,
-                    color: Colors.WHITE_SUBTITLE,
-                    fontSize: Texts.subtitle,
-                    textTransform: "uppercase",
-                  }}
+              <View
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                }}
+              >
+                <View style={{ width: 340 }}>
+                  <View
+                    style={{
+                      display: "flex",
+                      height: 30,
+                      justifyContent: "center",
+                    }}
+                  >
+                    <Text
+                      style={{
+                        fontWeight: "600",
+                        letterSpacing: -0.1,
+                        color: Colors.WHITE_SUBTITLE,
+                        fontSize: Texts.subtitle,
+                        textTransform: "uppercase",
+                      }}
+                    >
+                      {item.key}
+                    </Text>
+                  </View>
+                  <Text
+                    style={{
+                      color: Colors.WHITE,
+                      fontSize: Texts.text,
+                      textAlign: "justify",
+                    }}
+                  >
+                    {item.description}
+                  </Text>
+                </View>
+                <View
+                  style={{ justifyContent: "center", alignItems: "center" }}
                 >
-                  {item.key}
-                </Text>
-                <Text
-                  style={{
-                    color: Colors.WHITE,
-                    fontSize: Texts.text,
-                    textAlign: "justify",
-                  }}
-                >
-                  {item.description}
-                </Text>
+                  <EvilIcons name="chevron-right" size={60} color="white" />
+                </View>
               </View>
-              <View style={{ justifyContent: "center", alignItems: "center" }}>
-                <EvilIcons name="chevron-right" size={60} color="white" />
-              </View>
-            </View>
-          </Pressable>
+            </Pressable>
           </Link>
         )}
       />

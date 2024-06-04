@@ -1,30 +1,40 @@
-import React from "react";
 import { View, Text, ScrollView } from "react-native";
+import React from "react";
 import { Colors } from "@/constants/Colors";
 import { Texts } from "@/constants/Texts";
 import { HelloWave } from "@/components/HelloWave";
 
-export default function Diversificacion() {
-  const diversificacionData = [
+export default function Depositos() {
+  const data = [
     {
-      title: "Para qué sirve la Diversificación?",
+      title: "Plazo Fijo",
       description:
-        "La diversificación sirve para mitigar el riesgo asociado con la inversión al distribuir el capital entre diferentes activos. Al invertir en una variedad de activos, se reduce la exposición a los riesgos específicos de cada activo y se minimiza el impacto de eventos adversos en el desempeño general de la cartera. Además, la diversificación puede ayudar a mejorar la estabilidad y consistencia de los retornos de la inversión a lo largo del tiempo.",
+        "El dinero se deposita por un tiempo específico, que puede variar desde unos pocos meses hasta varios años. Durante este período, el dinero no puede retirarse sin incurrir en penalizaciones.",
     },
     {
-      title: "Cómo se logra la Diversificación?",
+      title: "Interés Fijo",
       description:
-        "La diversificación se logra invirtiendo en una amplia gama de activos financieros, que pueden incluir acciones, bonos, bienes raíces, materias primas, fondos mutuos, ETFs y otros instrumentos. También implica distribuir la inversión entre diferentes sectores industriales, como tecnología, salud, finanzas, energía, etc., así como entre diferentes geografías, como mercados nacionales e internacionales. La asignación de activos y la construcción de una cartera diversificada deben basarse en los objetivos financieros, el horizonte temporal y el nivel de tolerancia al riesgo del inversor.",
+        "El interés que se pagará al final del período es fijado en el momento de la apertura del depósito. Esto proporciona certeza sobre el rendimiento del ahorro.",
     },
     {
-      title: "Cuáles son los beneficios de la Diversificación?",
+      title: "Riesgo Bajo",
       description:
-        "Algunos de los principales beneficios de la diversificación incluyen la reducción del riesgo de la cartera, la mejora del potencial de retorno ajustado al riesgo, la protección contra la volatilidad del mercado, la minimización del impacto de eventos específicos del mercado y la mejora de la estabilidad y consistencia de los retornos de la inversión a lo largo del tiempo.",
+        "Son considerados una inversión de bajo riesgo porque el capital invertido está garantizado y el rendimiento es predecible.",
     },
     {
-      title: "Existen riesgos asociados con la Diversificación?",
+      title: "Liquidez Reducida",
       description:
-        "Si bien la diversificación puede ayudar a reducir el riesgo general de la cartera, no elimina por completo el riesgo de pérdida. Existen riesgos asociados con la diversificación, como el riesgo de mercado, el riesgo de liquidez, el riesgo de crédito, el riesgo de tipo de cambio y el riesgo de inflación. Además, una diversificación excesiva puede diluir los rendimientos potenciales de la cartera y limitar la capacidad de capturar oportunidades de inversión específicas.",
+        "El dinero no está disponible hasta el final del plazo, a menos que se acepten penalizaciones por retiro anticipado, que pueden incluir la pérdida de parte o la totalidad de los intereses acumulados.",
+    },
+    {
+      title: "Rentabilidad",
+      description:
+        "Los depósitos a plazo suelen ofrecer una tasa de interés más alta que las cuentas de ahorro tradicionales debido a la falta de liquidez y el compromiso de tiempo.",
+    },
+    {
+      title: "Seguridad",
+      description:
+        "En muchos países, los depósitos a plazo están protegidos por esquemas de seguro de depósitos que garantizan el reembolso del capital hasta un cierto límite en caso de quiebra del banco.",
     },
   ];
 
@@ -34,7 +44,7 @@ export default function Diversificacion() {
         style={{
           paddingTop: 50,
           paddingHorizontal: 20,
-          backgroundColor: Colors.BLACK,
+          backgroundColor: "#000",
           height: "100%",
           display: "flex",
           gap: 17,
@@ -48,7 +58,7 @@ export default function Diversificacion() {
             letterSpacing: -0.3,
           }}
         >
-          Diversificación de Inversiones <HelloWave />
+          Depositos a plazo <HelloWave />
         </Text>
         <Text
           style={{
@@ -57,19 +67,34 @@ export default function Diversificacion() {
             textAlign: "justify",
           }}
         >
-          La diversificación de inversiones es una estrategia financiera que
-          consiste en distribuir el capital entre diferentes tipos de activos
-          financieros con el objetivo de reducir el riesgo y maximizar el
-          retorno de la inversión. Esta estrategia implica invertir en una
-          variedad de clases de activos, sectores industriales, geografías y
-          tipos de instrumentos financieros.
+          Los depósitos a plazo, son productos financieros ofrecidos por bancos y otras instituciones financieras.
         </Text>
-        {diversificacionData.map((item, index) => (
+
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Se caracterizan por ser una forma de ahorro en la que el cliente deposita una suma de dinero en la entidad financiera durante un período de tiempo determinado, a cambio de recibir un interés fijo al final del plazo acordado.
+        </Text>
+
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Aquí te dejare algunos aspectos clave de los depósitos a plazo:
+        </Text>
+
+        {data.map((item, index) => (
           <View
             key={index}
             style={{
               paddingHorizontal: 20,
-              marginHorizontal: 60,
               paddingBottom: 20,
               borderWidth: 1,
               borderColor: "#333",
@@ -80,16 +105,18 @@ export default function Diversificacion() {
           >
             <Text
               style={{
-                color: Colors.WHITE_SUBTITLE,
+                color: Colors.WHITE_ORIGIN,
                 fontSize: Texts.subtitle,
-                fontWeight: "bold",
+                textTransform: "capitalize",
+                paddingBottom: 1,
+                fontWeight: "600",
               }}
             >
               {item.title}
             </Text>
             <Text
               style={{
-                color: Colors.WHITE,
+                color: Colors.TEXTO,
                 fontSize: Texts.text,
                 textAlign: "justify",
               }}
@@ -98,6 +125,10 @@ export default function Diversificacion() {
             </Text>
           </View>
         ))}
+
+        <Text style={{ color: Colors.TEXTO, fontSize: Texts.text }}>
+          En resumen, los depósitos a plazo son una opción de ahorro para aquellos que desean obtener un rendimiento fijo y están dispuestos a comprometer su dinero por un período específico sin necesidad de acceder a él durante ese tiempo.
+        </Text>
       </View>
     </ScrollView>
   );

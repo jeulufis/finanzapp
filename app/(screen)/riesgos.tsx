@@ -1,31 +1,40 @@
-import React from "react";
 import { View, Text, ScrollView } from "react-native";
+import React from "react";
 import { Colors } from "@/constants/Colors";
 import { Texts } from "@/constants/Texts";
 import { HelloWave } from "@/components/HelloWave";
 
-export default function RiesgosCrediticios() {
-  const riesgosCrediticiosData = [
+export default function Depositos() {
+  const data = [
     {
-      title:
-        "Cuáles son los Factores que Contribuyen a los Riesgos Crediticios?",
+      title: "Plazo Fijo",
       description:
-        "Los riesgos crediticios pueden ser influenciados por varios factores, incluyendo la calidad crediticia del prestatario, la capacidad de pago, la solidez financiera, la estabilidad económica, las condiciones del mercado, los cambios en las tasas de interés, los eventos adversos imprevistos y la efectividad de las políticas de gestión de riesgos.",
+        "El dinero se deposita por un tiempo específico, que puede variar desde unos pocos meses hasta varios años. Durante este período, el dinero no puede retirarse sin incurrir en penalizaciones.",
     },
     {
-      title: "Cómo se Evalúan y Mitigan los Riesgos Crediticios?",
+      title: "Interés Fijo",
       description:
-        "Los riesgos crediticios se evalúan mediante el análisis de la capacidad crediticia del prestatario, la calidad de los activos subyacentes, la estructura de garantías, el historial de crédito, la solvencia financiera y otros factores relevantes. Para mitigar estos riesgos, las instituciones financieras suelen implementar políticas y procedimientos de gestión de riesgos, establecer reservas para pérdidas crediticias, diversificar la cartera de créditos, establecer límites de exposición crediticia y utilizar herramientas de monitoreo y seguimiento de riesgos.",
+        "El interés que se pagará al final del período es fijado en el momento de la apertura del depósito. Esto proporciona certeza sobre el rendimiento del ahorro.",
     },
     {
-      title: "Cuáles son las Consecuencias de los Riesgos Crediticios?",
+      title: "Riesgo Bajo",
       description:
-        "Las consecuencias de los riesgos crediticios pueden ser significativas y pueden incluir pérdidas financieras, deterioro de la calidad de los activos, disminución de la rentabilidad, aumento de los costos de financiamiento, deterioro de la reputación de la institución financiera, disminución de la confianza del mercado y posibles implicaciones regulatorias.",
+        "Son considerados una inversión de bajo riesgo porque el capital invertido está garantizado y el rendimiento es predecible.",
     },
     {
-      title: "Cómo se pueden Mitigar los Riesgos Crediticios a Nivel Personal?",
+      title: "Liquidez Reducida",
       description:
-        "A nivel personal, se pueden mitigar los riesgos crediticios manteniendo una buena salud financiera, administrando responsablemente el crédito, manteniendo un historial de crédito positivo, evitando el endeudamiento excesivo, diversificando las fuentes de ingresos, ahorrando para emergencias y planificando cuidadosamente las finanzas personales.",
+        "El dinero no está disponible hasta el final del plazo, a menos que se acepten penalizaciones por retiro anticipado, que pueden incluir la pérdida de parte o la totalidad de los intereses acumulados.",
+    },
+    {
+      title: "Rentabilidad",
+      description:
+        "Los depósitos a plazo suelen ofrecer una tasa de interés más alta que las cuentas de ahorro tradicionales debido a la falta de liquidez y el compromiso de tiempo.",
+    },
+    {
+      title: "Seguridad",
+      description:
+        "En muchos países, los depósitos a plazo están protegidos por esquemas de seguro de depósitos que garantizan el reembolso del capital hasta un cierto límite en caso de quiebra del banco.",
     },
   ];
 
@@ -35,7 +44,7 @@ export default function RiesgosCrediticios() {
         style={{
           paddingTop: 50,
           paddingHorizontal: 20,
-          backgroundColor: Colors.BLACK,
+          backgroundColor: "#000",
           height: "100%",
           display: "flex",
           gap: 17,
@@ -46,33 +55,46 @@ export default function RiesgosCrediticios() {
             color: Colors.WHITE_SUBTITLE,
             fontSize: Texts.title,
             fontWeight: "bold",
+            letterSpacing: -0.3,
           }}
         >
-          Riesgos Crediticios
-          <HelloWave />
+          Depositos a plazo <HelloWave />
+        </Text>
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Los depósitos a plazo, son productos financieros ofrecidos por bancos y otras instituciones financieras.
         </Text>
 
         <Text
           style={{
             color: Colors.TEXTO,
             fontSize: Texts.text,
-            paddingVertical: 20,
             textAlign: "justify",
           }}
         >
-          Los riesgos crediticios son el riesgo de que un prestatario incumpla
-          con sus obligaciones de pago, ya sea por no pagar el capital prestado,
-          los intereses asociados u otros cargos relacionados. Estos riesgos
-          pueden surgir en diversas formas de crédito, como préstamos, bonos,
-          hipotecas, tarjetas de crédito y otras formas de financiamiento.
+          Se caracterizan por ser una forma de ahorro en la que el cliente deposita una suma de dinero en la entidad financiera durante un período de tiempo determinado, a cambio de recibir un interés fijo al final del plazo acordado.
         </Text>
 
-        {riesgosCrediticiosData.map((item, index) => (
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Aquí te dejare algunos aspectos clave de los depósitos a plazo:
+        </Text>
+
+        {data.map((item, index) => (
           <View
             key={index}
             style={{
               paddingHorizontal: 20,
-              marginHorizontal: 60,
               paddingBottom: 20,
               borderWidth: 1,
               borderColor: "#333",
@@ -83,16 +105,18 @@ export default function RiesgosCrediticios() {
           >
             <Text
               style={{
-                color: Colors.WHITE_SUBTITLE,
+                color: Colors.WHITE_ORIGIN,
                 fontSize: Texts.subtitle,
-                fontWeight: "bold",
+                textTransform: "capitalize",
+                paddingBottom: 1,
+                fontWeight: "600",
               }}
             >
               {item.title}
             </Text>
             <Text
               style={{
-                color: Colors.WHITE,
+                color: Colors.TEXTO,
                 fontSize: Texts.text,
                 textAlign: "justify",
               }}
@@ -101,6 +125,10 @@ export default function RiesgosCrediticios() {
             </Text>
           </View>
         ))}
+
+        <Text style={{ color: Colors.TEXTO, fontSize: Texts.text }}>
+          En resumen, los depósitos a plazo son una opción de ahorro para aquellos que desean obtener un rendimiento fijo y están dispuestos a comprometer su dinero por un período específico sin necesidad de acceder a él durante ese tiempo.
+        </Text>
       </View>
     </ScrollView>
   );

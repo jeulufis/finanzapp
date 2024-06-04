@@ -1,30 +1,40 @@
-import React from "react";
 import { View, Text, ScrollView } from "react-native";
+import React from "react";
 import { Colors } from "@/constants/Colors";
 import { Texts } from "@/constants/Texts";
 import { HelloWave } from "@/components/HelloWave";
 
-export default function InversionInmobiliaria() {
-  const inversionInmobiliariaData = [
+export default function Depositos() {
+  const data = [
     {
-      title: "Para qué sirve ?",
+      title: "Plazo Fijo",
       description:
-        "La inversión inmobiliaria sirve para varias finalidades. En primer lugar, puede proporcionar una fuente de ingresos pasivos a través del arrendamiento de propiedades, lo que permite a los inversionistas obtener un flujo constante de ingresos. También puede ofrecer la oportunidad de obtener ganancias a través de la apreciación del valor de la propiedad a lo largo del tiempo, especialmente en mercados inmobiliarios en crecimiento. Además, puede servir como una forma de diversificar una cartera de inversiones y proteger contra la inflación.",
+        "El dinero se deposita por un tiempo específico, que puede variar desde unos pocos meses hasta varios años. Durante este período, el dinero no puede retirarse sin incurrir en penalizaciones.",
     },
     {
-      title: "Es rentable ?",
+      title: "Interés Fijo",
       description:
-        "La rentabilidad de la inversión inmobiliaria puede variar dependiendo de varios factores, como la ubicación de la propiedad, la demanda del mercado, el estado del mercado inmobiliario y la gestión adecuada de la propiedad. Sin embargo, cuando se realiza de manera inteligente y se gestionan adecuadamente, las inversiones inmobiliarias pueden ser altamente rentables y ofrecer un buen retorno de la inversión a largo plazo.",
+        "El interés que se pagará al final del período es fijado en el momento de la apertura del depósito. Esto proporciona certeza sobre el rendimiento del ahorro.",
     },
     {
-      title: "Cuáles son los riesgos ?",
+      title: "Riesgo Bajo",
       description:
-        "Si bien la inversión inmobiliaria puede ofrecer muchas oportunidades, también conlleva ciertos riesgos. Algunos de estos riesgos incluyen la depreciación del valor de la propiedad, la vacancia prolongada, los costos de mantenimiento y reparación, los cambios en las condiciones del mercado, los problemas legales y la dificultad para encontrar inquilinos confiables. Es importante evaluar cuidadosamente estos riesgos y tomar medidas para mitigarlos antes de realizar una inversión inmobiliaria.",
+        "Son considerados una inversión de bajo riesgo porque el capital invertido está garantizado y el rendimiento es predecible.",
     },
     {
-      title: "Cómo puedo comenzar a invertir ?",
+      title: "Liquidez Reducida",
       description:
-        "Para comenzar a invertir en bienes raíces, es importante educarse sobre el mercado inmobiliario, establecer metas financieras claras, desarrollar un plan de inversión, buscar oportunidades de inversión adecuadas, realizar un análisis exhaustivo de la propiedad y considerar trabajar con profesionales inmobiliarios, como agentes, corredores o asesores financieros, para obtener orientación y asistencia.",
+        "El dinero no está disponible hasta el final del plazo, a menos que se acepten penalizaciones por retiro anticipado, que pueden incluir la pérdida de parte o la totalidad de los intereses acumulados.",
+    },
+    {
+      title: "Rentabilidad",
+      description:
+        "Los depósitos a plazo suelen ofrecer una tasa de interés más alta que las cuentas de ahorro tradicionales debido a la falta de liquidez y el compromiso de tiempo.",
+    },
+    {
+      title: "Seguridad",
+      description:
+        "En muchos países, los depósitos a plazo están protegidos por esquemas de seguro de depósitos que garantizan el reembolso del capital hasta un cierto límite en caso de quiebra del banco.",
     },
   ];
 
@@ -34,45 +44,57 @@ export default function InversionInmobiliaria() {
         style={{
           paddingTop: 50,
           paddingHorizontal: 20,
-          backgroundColor: Colors.BLACK,
+          backgroundColor: "#000",
           height: "100%",
           display: "flex",
           gap: 17,
         }}
       >
-        <View>
-          <Text
-            style={{
-              color: Colors.WHITE_SUBTITLE,
-              fontSize: Texts.title,
-              fontWeight: "bold",
-            }}
-          >
-            Inversión Inmobiliaria"
-            <HelloWave />
-          </Text>
+        <Text
+          style={{
+            color: Colors.WHITE_SUBTITLE,
+            fontSize: Texts.title,
+            fontWeight: "bold",
+            letterSpacing: -0.3,
+          }}
+        >
+          Depositos a plazo <HelloWave />
+        </Text>
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Los depósitos a plazo, son productos financieros ofrecidos por bancos y otras instituciones financieras.
+        </Text>
 
-          <Text
-            style={{
-              color: Colors.TEXTO,
-              fontSize: Texts.text,
-              paddingVertical: 20,
-              textAlign: "justify"
-            }}
-          >
-            La inversión inmobiliaria es la adquisición de propiedades con el
-            propósito de generar ingresos y obtener beneficios a través de su
-            arrendamiento, reventa o desarrollo. Estas propiedades pueden
-            incluir terrenos, casas, apartamentos, edificios comerciales u otros
-            tipos de bienes raíces.
-          </Text>
-        </View>
-        {inversionInmobiliariaData.map((item, index) => (
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Se caracterizan por ser una forma de ahorro en la que el cliente deposita una suma de dinero en la entidad financiera durante un período de tiempo determinado, a cambio de recibir un interés fijo al final del plazo acordado.
+        </Text>
+
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Aquí te dejare algunos aspectos clave de los depósitos a plazo:
+        </Text>
+
+        {data.map((item, index) => (
           <View
             key={index}
             style={{
               paddingHorizontal: 20,
-              marginHorizontal: 60,
               paddingBottom: 20,
               borderWidth: 1,
               borderColor: "#333",
@@ -94,7 +116,7 @@ export default function InversionInmobiliaria() {
             </Text>
             <Text
               style={{
-                color: Colors.WHITE,
+                color: Colors.TEXTO,
                 fontSize: Texts.text,
                 textAlign: "justify",
               }}
@@ -103,6 +125,10 @@ export default function InversionInmobiliaria() {
             </Text>
           </View>
         ))}
+
+        <Text style={{ color: Colors.TEXTO, fontSize: Texts.text }}>
+          En resumen, los depósitos a plazo son una opción de ahorro para aquellos que desean obtener un rendimiento fijo y están dispuestos a comprometer su dinero por un período específico sin necesidad de acceder a él durante ese tiempo.
+        </Text>
       </View>
     </ScrollView>
   );

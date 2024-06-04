@@ -1,130 +1,135 @@
-import { View, Text, FlatList } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
 import { Texts } from "@/constants/Texts";
 import { HelloWave } from "@/components/HelloWave";
 
-export default function Acciones() {
+export default function Depositos() {
   const data = [
     {
-      title: "Propiedad Parcial",
+      title: "Plazo Fijo",
       description:
-        "Las acciones representan una propiedad parcial en una empresa. Al comprar acciones, te conviertes en copropietario de esa empresa y tienes derecho a una parte de sus activos y ganancias.",
+        "El dinero se deposita por un tiempo específico, que puede variar desde unos pocos meses hasta varios años. Durante este período, el dinero no puede retirarse sin incurrir en penalizaciones.",
     },
     {
-      title: "Potencial de Crecimiento",
+      title: "Interés Fijo",
       description:
-        "Invertir en acciones ofrece la posibilidad de obtener altos rendimientos a largo plazo. El valor de las acciones puede aumentar con el tiempo, lo que permite a los inversores beneficiarse del crecimiento de la empresa.",
+        "El interés que se pagará al final del período es fijado en el momento de la apertura del depósito. Esto proporciona certeza sobre el rendimiento del ahorro.",
     },
     {
-      title: "Dividendos",
+      title: "Riesgo Bajo",
       description:
-        "Muchas empresas pagan dividendos a sus accionistas, que son una parte de las ganancias de la empresa distribuidas periódicamente. Los dividendos pueden proporcionar un flujo constante de ingresos.",
+        "Son considerados una inversión de bajo riesgo porque el capital invertido está garantizado y el rendimiento es predecible.",
     },
     {
-      title: "Liquidez",
+      title: "Liquidez Reducida",
       description:
-        "Las acciones son generalmente muy líquidas, lo que significa que puedes comprarlas y venderlas fácilmente en el mercado de valores en cualquier momento que el mercado esté abierto.",
+        "El dinero no está disponible hasta el final del plazo, a menos que se acepten penalizaciones por retiro anticipado, que pueden incluir la pérdida de parte o la totalidad de los intereses acumulados.",
     },
     {
-      title: "Diversificación",
+      title: "Rentabilidad",
       description:
-        "Invertir en una variedad de acciones de diferentes sectores y geografías puede ayudar a diversificar tu portafolio, reduciendo el riesgo general de tus inversiones.",
+        "Los depósitos a plazo suelen ofrecer una tasa de interés más alta que las cuentas de ahorro tradicionales debido a la falta de liquidez y el compromiso de tiempo.",
     },
     {
-      title: "Riesgo",
+      title: "Seguridad",
       description:
-        "Aunque las acciones pueden ofrecer altos rendimientos, también conllevan un alto nivel de riesgo. Los precios de las acciones pueden ser volátiles y pueden caer significativamente en poco tiempo.",
+        "En muchos países, los depósitos a plazo están protegidos por esquemas de seguro de depósitos que garantizan el reembolso del capital hasta un cierto límite en caso de quiebra del banco.",
     },
   ];
 
-  const renderHeader = () => (
-    <View style={{ paddingTop: 50, paddingHorizontal: 20 }}>
-      <Text
-        style={{
-          color: Colors.WHITE_SUBTITLE,
-          fontSize: Texts.title,
-          fontWeight: "bold",
-        }}
-      >
-        Inversiones en Acciones <HelloWave />
-      </Text>
-
-      <Text
-        style={{
-          color: Colors.TEXTO,
-          fontSize: Texts.text,
-          paddingVertical: 20,
-          textAlign: "justify"
-        }}
-      >
-        Las acciones son una de las formas más comunes de inversión y
-        representan una participación en la propiedad de una empresa. A
-        continuación, se presentan algunos aspectos clave sobre las inversiones
-        en acciones.
-      </Text>
-    </View>
-  );
-
-  const renderFooter = () => (
-    <View style={{ paddingHorizontal: 20, paddingBottom: 20 }}>
-      <Text style={{ color: Colors.TEXTO, fontSize: Texts.text }}>
-        En resumen, invertir en acciones puede ser una forma efectiva de
-        aumentar tu riqueza a largo plazo, pero es importante estar consciente
-        de los riesgos y estar preparado para la volatilidad del mercado.
-        Diversificar tu portafolio y hacer una investigación exhaustiva son
-        pasos clave para el éxito en las inversiones en acciones.
-      </Text>
-    </View>
-  );
-
-  const renderItem = ({ item }: any) => (
-    <View
-      style={{
-        paddingHorizontal: 20,
-        marginHorizontal: 60,
-        paddingBottom: 20,
-        borderWidth: 1,
-        borderColor: "#333",
-        borderRadius: 10,
-        marginVertical: 10,
-        paddingVertical: 15,
-      }}
-    >
-      <Text
-        style={{
-          color: Colors.WHITE_ORIGIN,
-          fontSize: Texts.subtitle,
-          textTransform: "capitalize",
-          paddingBottom: 1,
-          fontWeight: "600",
-        }}
-      >
-        {item.title}:
-      </Text>
-      <Text
-        style={{
-          color: Colors.TEXTO,
-          fontSize: Texts.text,
-          textAlign: "justify",
-        }}
-      >
-        {item.description}
-      </Text>
-    </View>
-  );
-
   return (
-    <FlatList
-      data={data}
-      ListHeaderComponent={renderHeader}
-      ListFooterComponent={renderFooter}
-      renderItem={renderItem}
-      keyExtractor={(item, index) => index.toString()}
-      contentContainerStyle={{
-        backgroundColor: "#000",
-        paddingBottom: 20,
-      }}
-    />
+    <ScrollView>
+      <View
+        style={{
+          paddingTop: 50,
+          paddingHorizontal: 20,
+          backgroundColor: "#000",
+          height: "100%",
+          display: "flex",
+          gap: 17,
+        }}
+      >
+        <Text
+          style={{
+            color: Colors.WHITE_SUBTITLE,
+            fontSize: Texts.title,
+            fontWeight: "bold",
+            letterSpacing: -0.3,
+          }}
+        >
+          Depositos a plazo <HelloWave />
+        </Text>
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Los depósitos a plazo, son productos financieros ofrecidos por bancos y otras instituciones financieras.
+        </Text>
+
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Se caracterizan por ser una forma de ahorro en la que el cliente deposita una suma de dinero en la entidad financiera durante un período de tiempo determinado, a cambio de recibir un interés fijo al final del plazo acordado.
+        </Text>
+
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Aquí te dejare algunos aspectos clave de los depósitos a plazo:
+        </Text>
+
+        {data.map((item, index) => (
+          <View
+            key={index}
+            style={{
+              paddingHorizontal: 20,
+              paddingBottom: 20,
+              borderWidth: 1,
+              borderColor: "#333",
+              borderRadius: 10,
+              marginVertical: 10,
+              paddingVertical: 15,
+            }}
+          >
+            <Text
+              style={{
+                color: Colors.WHITE_ORIGIN,
+                fontSize: Texts.subtitle,
+                textTransform: "capitalize",
+                paddingBottom: 1,
+                fontWeight: "600",
+              }}
+            >
+              {item.title}
+            </Text>
+            <Text
+              style={{
+                color: Colors.TEXTO,
+                fontSize: Texts.text,
+                textAlign: "justify",
+              }}
+            >
+              {item.description}
+            </Text>
+          </View>
+        ))}
+
+        <Text style={{ color: Colors.TEXTO, fontSize: Texts.text }}>
+          En resumen, los depósitos a plazo son una opción de ahorro para aquellos que desean obtener un rendimiento fijo y están dispuestos a comprometer su dinero por un período específico sin necesidad de acceder a él durante ese tiempo.
+        </Text>
+      </View>
+    </ScrollView>
   );
 }

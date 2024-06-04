@@ -1,110 +1,135 @@
-import { View, Text, FlatList } from "react-native";
+import { View, Text, ScrollView } from "react-native";
 import React from "react";
 import { Colors } from "@/constants/Colors";
 import { Texts } from "@/constants/Texts";
 import { HelloWave } from "@/components/HelloWave";
 
-export default function FondosMutuos() {
+export default function Depositos() {
   const data = [
     {
-      title: "Diversificación",
+      title: "Plazo Fijo",
       description:
-        "Los fondos mutuos permiten a los inversores diversificar su portafolio, invirtiendo en una variedad de activos como acciones, bonos y otros valores, reduciendo así el riesgo.",
+        "El dinero se deposita por un tiempo específico, que puede variar desde unos pocos meses hasta varios años. Durante este período, el dinero no puede retirarse sin incurrir en penalizaciones.",
     },
     {
-      title: "Accesibilidad",
+      title: "Interés Fijo",
       description:
-        "Con una inversión mínima relativamente baja, los fondos mutuos ofrecen acceso a un portafolio diversificado que de otro modo sería difícil de alcanzar para los inversores individuales.",
+        "El interés que se pagará al final del período es fijado en el momento de la apertura del depósito. Esto proporciona certeza sobre el rendimiento del ahorro.",
     },
     {
-      title: "Gestión Profesional",
+      title: "Riesgo Bajo",
       description:
-        "Los fondos mutuos son gestionados por profesionales que toman decisiones de inversión basadas en un análisis exhaustivo del mercado, lo que puede ser beneficioso para los inversores que no tienen el tiempo o la experiencia para gestionar sus propias inversiones.",
+        "Son considerados una inversión de bajo riesgo porque el capital invertido está garantizado y el rendimiento es predecible.",
     },
     {
-      title: "Liquidez",
+      title: "Liquidez Reducida",
       description:
-        "La mayoría de los fondos mutuos permiten a los inversores comprar y vender sus participaciones en cualquier día hábil, proporcionando un alto grado de liquidez en comparación con otras inversiones.",
+        "El dinero no está disponible hasta el final del plazo, a menos que se acepten penalizaciones por retiro anticipado, que pueden incluir la pérdida de parte o la totalidad de los intereses acumulados.",
     },
     {
-      title: "Variedad de Fondos",
+      title: "Rentabilidad",
       description:
-        "Existen diferentes tipos de fondos mutuos disponibles, incluyendo fondos de acciones, fondos de bonos, fondos del mercado monetario y fondos mixtos, permitiendo a los inversores elegir según sus objetivos y tolerancia al riesgo.",
+        "Los depósitos a plazo suelen ofrecer una tasa de interés más alta que las cuentas de ahorro tradicionales debido a la falta de liquidez y el compromiso de tiempo.",
     },
     {
-      title: "Costo",
+      title: "Seguridad",
       description:
-        "Aunque los fondos mutuos ofrecen muchas ventajas, también pueden tener costos asociados, como comisiones de gestión y otros gastos, que deben ser considerados al momento de invertir.",
+        "En muchos países, los depósitos a plazo están protegidos por esquemas de seguro de depósitos que garantizan el reembolso del capital hasta un cierto límite en caso de quiebra del banco.",
     },
   ];
 
-  const renderHeader = () => (
-    <View style={{ paddingTop: 50, paddingHorizontal: 20 }}>
-      <Text
-        style={{
-          color: Colors.WHITE_SUBTITLE,
-          fontSize: Texts.title,
-          fontWeight: "bold",
-        }}
-      >
-        Fondos Mutuos <HelloWave />
-      </Text>
-      <View style={{marginVertical: 20}}>
-      <Text style={{ color: Colors.TEXTO, fontSize: Texts.text, textAlign: "justify" }}>
-        Los fondos mutuos son vehículos de inversión que agrupan dinero de muchos inversores para comprar una cartera diversificada de valores. Son una forma popular de inversión debido a sus múltiples beneficios.
-      </Text>
-      <Text style={{ color: Colors.TEXTO, fontSize: Texts.text }}>
-        Aquí hay algunos aspectos clave de los fondos mutuos:
-      </Text>
-      </View>
-    </View>
-  );
-
-  const renderFooter = () => (
-    <View style={{ paddingHorizontal: 20, paddingBottom: 20 }}>
-      <Text style={{ color: Colors.TEXTO, fontSize: Texts.text }}>
-        En resumen, los fondos mutuos son una opción de inversión atractiva para aquellos que buscan diversificación, gestión profesional y liquidez. Sin embargo, es importante considerar los costos asociados y elegir fondos que se alineen con los objetivos y la tolerancia al riesgo del inversor.
-      </Text>
-    </View>
-  );
-
-  const renderItem = ({ item }:any) => (
-    <View style={{ paddingHorizontal: 20,
-      marginHorizontal: 60,
-      paddingBottom: 20,
-      borderWidth: 1,
-      borderColor: "#333",
-      borderRadius: 10,
-      marginVertical: 10,
-      paddingVertical: 15,}}>
-      <Text
-        style={{
-          color: Colors.WHITE_ORIGIN,
-          fontSize: Texts.subtitle,
-          textTransform: "capitalize",
-          paddingBottom: 1,
-          fontWeight: "600",
-        }}
-      >
-        {item.title}:
-      </Text>
-      <Text style={{ color: Colors.TEXTO, fontSize: Texts.text, textAlign: 'justify' }}>
-        {item.description}
-      </Text>
-    </View>
-  );
-
   return (
-    <FlatList
-      data={data}
-      ListHeaderComponent={renderHeader}
-      ListFooterComponent={renderFooter}
-      renderItem={renderItem}
-      keyExtractor={(item, index) => index.toString()}
-      contentContainerStyle={{
-        backgroundColor: "#000",
-        paddingBottom: 20,
-      }}
-    />
+    <ScrollView>
+      <View
+        style={{
+          paddingTop: 50,
+          paddingHorizontal: 20,
+          backgroundColor: "#000",
+          height: "100%",
+          display: "flex",
+          gap: 17,
+        }}
+      >
+        <Text
+          style={{
+            color: Colors.WHITE_SUBTITLE,
+            fontSize: Texts.title,
+            fontWeight: "bold",
+            letterSpacing: -0.3,
+          }}
+        >
+          Depositos a plazo <HelloWave />
+        </Text>
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Los depósitos a plazo, son productos financieros ofrecidos por bancos y otras instituciones financieras.
+        </Text>
+
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Se caracterizan por ser una forma de ahorro en la que el cliente deposita una suma de dinero en la entidad financiera durante un período de tiempo determinado, a cambio de recibir un interés fijo al final del plazo acordado.
+        </Text>
+
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Aquí te dejare algunos aspectos clave de los depósitos a plazo:
+        </Text>
+
+        {data.map((item, index) => (
+          <View
+            key={index}
+            style={{
+              paddingHorizontal: 20,
+              paddingBottom: 20,
+              borderWidth: 1,
+              borderColor: "#333",
+              borderRadius: 10,
+              marginVertical: 10,
+              paddingVertical: 15,
+            }}
+          >
+            <Text
+              style={{
+                color: Colors.WHITE_ORIGIN,
+                fontSize: Texts.subtitle,
+                textTransform: "capitalize",
+                paddingBottom: 1,
+                fontWeight: "600",
+              }}
+            >
+              {item.title}
+            </Text>
+            <Text
+              style={{
+                color: Colors.TEXTO,
+                fontSize: Texts.text,
+                textAlign: "justify",
+              }}
+            >
+              {item.description}
+            </Text>
+          </View>
+        ))}
+
+        <Text style={{ color: Colors.TEXTO, fontSize: Texts.text, textAlign:'justify' }}>
+          En resumen, los depósitos a plazo son una opción de ahorro para aquellos que desean obtener un rendimiento fijo y están dispuestos a comprometer su dinero por un período específico sin necesidad de acceder a él durante ese tiempo.
+        </Text>
+      </View>
+    </ScrollView>
   );
 }

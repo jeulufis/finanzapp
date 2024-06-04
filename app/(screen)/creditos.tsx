@@ -1,58 +1,40 @@
-import React from "react";
 import { View, Text, ScrollView } from "react-native";
+import React from "react";
 import { Colors } from "@/constants/Colors";
 import { Texts } from "@/constants/Texts";
 import { HelloWave } from "@/components/HelloWave";
 
-export default function Creditos() {
-  const creditosData = [
+export default function Depositos() {
+  const data = [
     {
-      title: "Tasas de Interés Bajas",
+      title: "Plazo Fijo",
       description:
-        "Los créditos buenos suelen ofrecer tasas de interés más bajas en comparación con otros tipos de créditos disponibles en el mercado.",
+        "El dinero se deposita por un tiempo específico, que puede variar desde unos pocos meses hasta varios años. Durante este período, el dinero no puede retirarse sin incurrir en penalizaciones.",
     },
     {
-      title: "Condiciones Flexibles de Pago",
+      title: "Interés Fijo",
       description:
-        "Estos créditos suelen tener condiciones de pago flexibles, lo que significa que puedes ajustar los plazos y las cuotas de acuerdo con tus necesidades financieras.",
+        "El interés que se pagará al final del período es fijado en el momento de la apertura del depósito. Esto proporciona certeza sobre el rendimiento del ahorro.",
     },
     {
-      title: "Proceso de Aprobación Rápido",
+      title: "Riesgo Bajo",
       description:
-        "Los créditos buenos generalmente tienen un proceso de aprobación más rápido, lo que te permite obtener los fondos que necesitas de manera oportuna.",
+        "Son considerados una inversión de bajo riesgo porque el capital invertido está garantizado y el rendimiento es predecible.",
     },
     {
-      title: "Montos de Préstamo Razonables",
+      title: "Liquidez Reducida",
       description:
-        "Puedes acceder a montos de préstamo razonables que se ajusten a tus necesidades financieras específicas, sin comprometer tu capacidad de pago.",
+        "El dinero no está disponible hasta el final del plazo, a menos que se acepten penalizaciones por retiro anticipado, que pueden incluir la pérdida de parte o la totalidad de los intereses acumulados.",
     },
     {
-      title: "Transparencia en los Términos y Condiciones",
+      title: "Rentabilidad",
       description:
-        "Los prestamistas de créditos buenos suelen ser transparentes en cuanto a los términos y condiciones del préstamo, evitando sorpresas desagradables.",
+        "Los depósitos a plazo suelen ofrecer una tasa de interés más alta que las cuentas de ahorro tradicionales debido a la falta de liquidez y el compromiso de tiempo.",
     },
     {
-      title: "Soporte al Cliente de Calidad",
+      title: "Seguridad",
       description:
-        "Las instituciones financieras que ofrecen créditos buenos suelen brindar un excelente servicio de atención al cliente, lo que te permite obtener ayuda cuando la necesitas.",
-    },
-  ];
-
-  const porQueBuenosData = [
-    {
-      title: "Acceso a Financiamiento",
-      description:
-        "Los créditos buenos te brindan acceso a financiamiento que puede ser crucial para la realización de proyectos importantes o para cubrir necesidades financieras urgentes.",
-    },
-    {
-      title: "Facilitan la Planificación Financiera",
-      description:
-        "Con tasas de interés bajas y condiciones flexibles, los créditos buenos te permiten planificar tus pagos de manera más efectiva y evitar situaciones de endeudamiento excesivo.",
-    },
-    {
-      title: "Fomentan el Crecimiento Económico",
-      description:
-        "Al proporcionar financiamiento a individuos y empresas, los créditos buenos contribuyen al crecimiento económico al estimular la inversión y la actividad empresarial.",
+        "En muchos países, los depósitos a plazo están protegidos por esquemas de seguro de depósitos que garantizan el reembolso del capital hasta un cierto límite en caso de quiebra del banco.",
     },
   ];
 
@@ -62,7 +44,7 @@ export default function Creditos() {
         style={{
           paddingTop: 50,
           paddingHorizontal: 20,
-          backgroundColor: Colors.BLACK,
+          backgroundColor: "#000",
           height: "100%",
           display: "flex",
           gap: 17,
@@ -73,32 +55,70 @@ export default function Creditos() {
             color: Colors.WHITE_SUBTITLE,
             fontSize: Texts.title,
             fontWeight: "bold",
+            letterSpacing: -0.3,
           }}
         >
-         Creditos <HelloWave />
+          Depositos a plazo <HelloWave />
         </Text>
-        {creditosData.map((item, index) => (
-          <View key={index} style={{ paddingHorizontal: 20,
-            marginHorizontal: 60,
-            paddingBottom: 20,
-            borderWidth: 1,
-            borderColor: "#333",
-            borderRadius: 10,
-            marginVertical: 10,
-            paddingVertical: 15, }}>
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Los depósitos a plazo, son productos financieros ofrecidos por bancos y otras instituciones financieras.
+        </Text>
+
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Se caracterizan por ser una forma de ahorro en la que el cliente deposita una suma de dinero en la entidad financiera durante un período de tiempo determinado, a cambio de recibir un interés fijo al final del plazo acordado.
+        </Text>
+
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Aquí te dejare algunos aspectos clave de los depósitos a plazo:
+        </Text>
+
+        {data.map((item, index) => (
+          <View
+            key={index}
+            style={{
+              paddingHorizontal: 20,
+              paddingBottom: 20,
+              borderWidth: 1,
+              borderColor: "#333",
+              borderRadius: 10,
+              marginVertical: 10,
+              paddingVertical: 15,
+            }}
+          >
             <Text
               style={{
-                color: Colors.WHITE_SUBTITLE,
-                fontSize: Texts.text,
-                fontWeight: "bold",
+                color: Colors.WHITE_ORIGIN,
+                fontSize: Texts.subtitle,
+                textTransform: "capitalize",
+                paddingBottom: 1,
+                fontWeight: "600",
               }}
             >
               {item.title}
             </Text>
             <Text
               style={{
-                color: Colors.WHITE,
+                color: Colors.TEXTO,
                 fontSize: Texts.text,
+                textAlign: "justify",
               }}
             >
               {item.description}
@@ -106,44 +126,9 @@ export default function Creditos() {
           </View>
         ))}
 
-        <Text
-          style={{
-            color: Colors.WHITE_SUBTITLE,
-            fontSize: Texts.title,
-            fontWeight: "bold",
-          }}
-        >
-          Por qué son buenos los créditos ?
+        <Text style={{ color: Colors.TEXTO, fontSize: Texts.text }}>
+          En resumen, los depósitos a plazo son una opción de ahorro para aquellos que desean obtener un rendimiento fijo y están dispuestos a comprometer su dinero por un período específico sin necesidad de acceder a él durante ese tiempo.
         </Text>
-        {porQueBuenosData.map((item, index) => (
-          <View key={index} style={{ paddingHorizontal: 20,
-            marginHorizontal: 60,
-            paddingBottom: 20,
-            borderWidth: 1,
-            borderColor: "#333",
-            borderRadius: 10,
-            marginVertical: 10,
-            paddingVertical: 15, }}>
-            <Text
-              style={{
-                color: Colors.WHITE_SUBTITLE,
-                fontSize: Texts.text,
-                fontWeight: "bold",
-              }}
-            >
-              {item.title}
-            </Text>
-            <Text
-              style={{
-                color: Colors.WHITE,
-                fontSize: Texts.text,
-                textAlign: "justify"
-              }}
-            >
-              {item.description}
-            </Text>
-          </View>
-        ))}
       </View>
     </ScrollView>
   );

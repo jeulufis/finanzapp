@@ -1,43 +1,40 @@
-import React from "react";
 import { View, Text, ScrollView } from "react-native";
+import React from "react";
 import { Colors } from "@/constants/Colors";
 import { Texts } from "@/constants/Texts";
 import { HelloWave } from "@/components/HelloWave";
 
-export default function depositos() {
-  const activosData = [
+export default function Depositos() {
+  const data = [
     {
-      title: "Activo Circulante",
+      title: "Plazo Fijo",
       description:
-        "Incluye los activos que pueden convertirse rápidamente en efectivo o que se espera que se consuman en un corto plazo, generalmente dentro de un año. Ejemplos incluyen efectivo, cuentas por cobrar y existencias.",
+        "El dinero se deposita por un tiempo específico, que puede variar desde unos pocos meses hasta varios años. Durante este período, el dinero no puede retirarse sin incurrir en penalizaciones.",
     },
     {
-      title: "Activo Fijo",
+      title: "Interés Fijo",
       description:
-        "Se refiere a los activos tangibles e intangibles que se utilizan en la operación del negocio y se espera que proporcionen beneficios económicos durante varios períodos contables. Ejemplos incluyen propiedades, planta y equipo, así como activos intangibles como patentes y marcas registradas.",
+        "El interés que se pagará al final del período es fijado en el momento de la apertura del depósito. Esto proporciona certeza sobre el rendimiento del ahorro.",
     },
     {
-      title: "Otros Activos",
+      title: "Riesgo Bajo",
       description:
-        "Incluye activos que no se clasifican fácilmente en las categorías anteriores, como inversiones a largo plazo, activos diferidos y otros activos no corrientes.",
-    },
-  ];
-
-  const pasivosData = [
-    {
-      title: "Pasivo Circulante",
-      description:
-        "Incluye las obligaciones que se espera que se liquiden en un corto plazo, generalmente dentro de un año. Ejemplos incluyen cuentas por pagar, préstamos a corto plazo y pasivos acumulados.",
+        "Son considerados una inversión de bajo riesgo porque el capital invertido está garantizado y el rendimiento es predecible.",
     },
     {
-      title: "Pasivo No Circulante",
+      title: "Liquidez Reducida",
       description:
-        "Se refiere a las obligaciones a largo plazo, es decir, aquellas que se espera que se liquiden después de un año. Ejemplos incluyen préstamos a largo plazo, bonos y pensiones.",
+        "El dinero no está disponible hasta el final del plazo, a menos que se acepten penalizaciones por retiro anticipado, que pueden incluir la pérdida de parte o la totalidad de los intereses acumulados.",
     },
     {
-      title: "Patrimonio Neto",
+      title: "Rentabilidad",
       description:
-        "Representa los fondos propios de la empresa, es decir, los recursos que pertenecen a los propietarios. Incluye el capital social, las utilidades retenidas y otros componentes de patrimonio neto.",
+        "Los depósitos a plazo suelen ofrecer una tasa de interés más alta que las cuentas de ahorro tradicionales debido a la falta de liquidez y el compromiso de tiempo.",
+    },
+    {
+      title: "Seguridad",
+      description:
+        "En muchos países, los depósitos a plazo están protegidos por esquemas de seguro de depósitos que garantizan el reembolso del capital hasta un cierto límite en caso de quiebra del banco.",
     },
   ];
 
@@ -58,32 +55,70 @@ export default function depositos() {
             color: Colors.WHITE_SUBTITLE,
             fontSize: Texts.title,
             fontWeight: "bold",
+            letterSpacing: -0.3,
           }}
         >
-          Activos <HelloWave />
+          Depositos a plazo <HelloWave />
         </Text>
-        {activosData.map((item, index) => (
-          <View key={index} style={{ paddingHorizontal: 20,
-            marginHorizontal: 60,
-            paddingBottom: 20,
-            borderWidth: 1,
-            borderColor: "#333",
-            borderRadius: 10,
-            marginVertical: 10,
-            paddingVertical: 15, }}>
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Los depósitos a plazo, son productos financieros ofrecidos por bancos y otras instituciones financieras.
+        </Text>
+
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Se caracterizan por ser una forma de ahorro en la que el cliente deposita una suma de dinero en la entidad financiera durante un período de tiempo determinado, a cambio de recibir un interés fijo al final del plazo acordado.
+        </Text>
+
+        <Text
+          style={{
+            color: Colors.TEXTO,
+            fontSize: Texts.text,
+            textAlign: "justify",
+          }}
+        >
+          Aquí te dejare algunos aspectos clave de los depósitos a plazo:
+        </Text>
+
+        {data.map((item, index) => (
+          <View
+            key={index}
+            style={{
+              paddingHorizontal: 20,
+              paddingBottom: 20,
+              borderWidth: 1,
+              borderColor: "#333",
+              borderRadius: 10,
+              marginVertical: 10,
+              paddingVertical: 15,
+            }}
+          >
             <Text
               style={{
-                color: Colors.WHITE_SUBTITLE,
-                fontSize: Texts.text,
-                fontWeight: "bold",
+                color: Colors.WHITE_ORIGIN,
+                fontSize: Texts.subtitle,
+                textTransform: "capitalize",
+                paddingBottom: 1,
+                fontWeight: "600",
               }}
             >
               {item.title}
             </Text>
             <Text
               style={{
-                color: Colors.WHITE,
+                color: Colors.TEXTO,
                 fontSize: Texts.text,
+                textAlign: "justify",
               }}
             >
               {item.description}
@@ -91,44 +126,9 @@ export default function depositos() {
           </View>
         ))}
 
-        <Text
-          style={{
-            color: Colors.WHITE_SUBTITLE,
-            fontSize: Texts.title,
-            fontWeight: "bold",
-          }}
-        >
-          Pasivos <HelloWave />
+        <Text style={{ color: Colors.TEXTO, fontSize: Texts.text }}>
+          En resumen, los depósitos a plazo son una opción de ahorro para aquellos que desean obtener un rendimiento fijo y están dispuestos a comprometer su dinero por un período específico sin necesidad de acceder a él durante ese tiempo.
         </Text>
-        {pasivosData.map((item, index) => (
-          <View key={index} style={{ paddingHorizontal: 20,
-            marginHorizontal: 60,
-            paddingBottom: 20,
-            borderWidth: 1,
-            borderColor: "#333",
-            borderRadius: 10,
-            marginVertical: 10,
-            paddingVertical: 15, }}>
-            <Text
-              style={{
-                color: Colors.WHITE_SUBTITLE,
-                fontSize: Texts.text,
-                fontWeight: "bold",
-              }}
-            >
-              {item.title}
-            </Text>
-            <Text
-              style={{
-                color: Colors.WHITE,
-                fontSize: Texts.text,
-                textAlign:'justify'
-              }}
-            >
-              {item.description}
-            </Text>
-          </View>
-        ))}
       </View>
     </ScrollView>
   );
