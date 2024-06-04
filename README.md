@@ -1,3 +1,6 @@
+
+![Finanzap (2)](https://github.com/jeulufis/finanzapp/assets/92868937/6e1c3222-4f8e-4888-b62b-cc2303ee38f8)
+
 # Welcome to your Expo app 👋
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
